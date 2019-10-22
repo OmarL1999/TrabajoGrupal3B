@@ -1,0 +1,183 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1.Nota
+{
+    public class Class1
+    {
+        float Suma = 0, RN, suma2;
+        public Class1()
+        {
+        }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+
+            set { nombre = value; }
+        }
+        private float ac;
+
+        public float Ac
+        {
+
+            get { return ac; }
+
+            set { ac = value; }
+
+        }
+        private float pr;
+
+        public float Pr
+        {
+            get { return pr; }
+            set { pr = value; }
+        }
+
+        private float ta;
+
+        public float Ta
+        {
+            get { return ta; }
+            set { ta = value; }
+        }
+
+        private float ef;
+
+        public float Ef
+        {
+            get { return ef; }
+            set { ef = value; }
+        }
+
+
+        public float P1
+        {
+            get { return ((Ac * 0.25f) + (Pr * 0.25f) + (Ta * 0.2f) + (Ef * 0.3f)); }
+
+        }
+
+        private float ac1;
+
+        public float Ac1
+        {
+
+            get { return ac1; }
+
+            set { ac1 = value; }
+
+        }
+        private float pr1;
+
+        public float Pr1
+        {
+            get { return pr1; }
+            set { pr1 = value; }
+        }
+
+        private float ta1;
+
+        public float Ta1
+        {
+            get { return ta1; }
+            set { ta1 = value; }
+        }
+
+        private float ef1;
+
+        public float Ef1
+        {
+            get { return ef1; }
+            set
+            {
+
+                ef1 = value;
+            }
+        }
+        public float P2
+        {
+            get { return ((Ac1 * 0.25f) + (Pr1 * 0.25f) + (Ta1 * 0.2f) + (Ef1 * 0.3f)); }
+
+        }
+
+
+        public float PRO
+        {
+            get { return (P1+P2); }
+
+        }
+       
+        public float PT
+        {
+            get
+            {
+                Suma = (P1 + P2);
+                float RC;
+                if (Suma > 14)
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("----RESULTADO----");
+                    Console.WriteLine("ESTUDIANTE: " + Nombre);
+                    Console.WriteLine("Promedio del primer parcial: " + P1);
+                    Console.WriteLine("Promedio del segundo parcial: " + P2);
+                    Console.WriteLine("Suma: " + PRO);
+                    Console.WriteLine("ESTADO: APROBADO");
+                    Console.WriteLine("-----------------");
+                }
+                else
+                {
+                    
+                    int vad = 0;
+                    do
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("----RECUPERACION----");
+                        Console.WriteLine("Ingrese nota de recuperacion");
+                        RC = Convert.ToInt32(Console.ReadLine());
+                        if (RC >= 0 && RC <= 10)
+                        {
+                            vad = 1;
+                        }
+                        else Console.WriteLine("Ingrese numero valido");
+                    } while (vad != 1);
+                    float NR = (Suma / 2) + RC;
+
+                    RN = NR * 0.5F;            
+                    if (NR > 14)
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("----RESULTADO----");
+                        Console.WriteLine("ESTUDIANTE: " +Nombre);
+                        Console.WriteLine("Promedio del primer parcial: "+P1);
+                        Console.WriteLine("Promedio del segundo parcial: "+P2);
+                        Console.WriteLine("Suma: "+PRO);
+                        Console.WriteLine("Examen de recuperación: " +RC);
+                        Console.WriteLine("Suma: " + NR);
+                        Console.WriteLine("FINAL: " + RN);
+                        Console.WriteLine("ESTADO: APROBADO");
+                        Console.WriteLine("-----------------");
+                    }
+                    else
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("----RESULTADO----");
+                        Console.WriteLine("ESTUDIANTE: " + Nombre);
+                        Console.WriteLine("Promedio del primer parcial: " + P1);
+                        Console.WriteLine("Promedio del segundo parcial: " + P2);
+                        Console.WriteLine("Suma: " + PRO);
+                        Console.WriteLine("Examen de recuperación: " + RC);
+                        Console.WriteLine("Suma: " + NR);
+                        Console.WriteLine("FINAL: " + RN);
+                        Console.WriteLine("ESTADO: REPROBADO");
+                        Console.WriteLine("-----------------");
+                    }
+                }
+                return suma2 = RN;
+            }
+        }
+    }
+}
