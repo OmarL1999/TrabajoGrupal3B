@@ -1,0 +1,114 @@
+using System;
+using ConsoleApp1.Nota;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Class1 r1 = new Class1();
+
+            Console.WriteLine("Ingrese nombres y apellidos del estudiante");
+            r1.Nombre = Convert.ToString(Console.ReadLine());
+            int vad = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de AC");
+                r1.Ac = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ac >= 0 && r1.Ac <= 10)
+                {
+                    vad = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad != 1);
+            int vad2 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de PR");
+                r1.Pr = Convert.ToInt64(Console.ReadLine());
+                if (r1.Pr >= 0 && r1.Pr <= 10)
+                {
+                    vad2 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad2 != 1);
+            int vad3 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de TA");
+                r1.Ta = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ta >= 0 && r1.Ta <= 10)
+                {
+                    vad3 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad3 != 1);
+            int vad4 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de EF");
+                r1.Ef = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ef >= 0 && r1.Ef <= 10)
+                {
+                    vad4 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad4 != 1);
+            Console.WriteLine("El promedio del primer parcial es: " + r1.P1);
+
+            Console.WriteLine("-----SEGUNDO PARCIAL-----");
+            int vad5 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de AC");
+                r1.Ac1 = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ac1 >= 0 && r1.Ac1 <= 10)
+                {
+                    vad5 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad5 != 1);
+            int vad6 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de PR");
+                r1.Pr1 = Convert.ToInt64(Console.ReadLine());
+                if (r1.Pr1 >= 0 && r1.Pr1 <= 10)
+                {
+                    vad6 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad6 != 1);
+            int vad7 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de TA");
+                r1.Ta1 = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ta1 >= 0 && r1.Ta1 <= 10)
+                {
+                    vad7 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad7 != 1);
+            int vad8 = 0;
+            do
+            {
+                Console.WriteLine("Ingrese la nota de EF");
+                r1.Ef1 = Convert.ToInt64(Console.ReadLine());
+                if (r1.Ef1 >= 0 && r1.Ef1 <= 10)
+                {
+                    vad8 = 1;
+                }
+                else Console.WriteLine("Ingrese numero valido");
+            } while (vad8 != 1);
+            Console.WriteLine("El promedio del segundo parcial es: " + r1.P2);
+            Console.WriteLine(r1.PT);
+            Console.ReadKey();
+        }
+    }
+    }
